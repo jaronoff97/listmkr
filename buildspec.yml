@@ -9,9 +9,8 @@ phases:
   build:
     commands:
       - echo Archiving previous version!
-      - now=$(date +"%m_%d_%Y");
-      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $IMAGE_REPO_NAME:$now;
-      - docker push $IMAGE_REPO_NAME:$now;
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $IMAGE_REPO_NAME:$(date +"%m_%d_%Y");
+      - docker push $IMAGE_REPO_NAME:$(date +"%m_%d_%Y");
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
