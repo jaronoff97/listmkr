@@ -15,7 +15,7 @@ COPY . /usr/src/app
 
 RUN npm run deploy:prod
 # Copy the contents of the dist directory over to the nginx web root
-COPY /dist/* /var/www/html/
+COPY dist/* /var/www/html/
 # Expose the public http port
 EXPOSE 80
 # Start server
