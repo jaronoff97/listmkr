@@ -23,9 +23,11 @@
     "deploy:prod": "better-npm-run deploy:prod",
     "flow:check": "babel-node bin/flow-check",
     "codecov": "cat coverage/*/lcov.info | codecov",
-    "build:prod": "docker build -t jaronoff/listmkr-produ .",
-    "start:prod": "docker run --rm -d -p 80:80 --name listmkr jaronoff/listmkr-produ",
+    "build:prod": "docker build -t jaronoff/listmkr-prod .",
+    "start:prod": "docker run --rm -d -p 80:80 --name listmkr jaronoff/listmkr-prod",
     "stop:prod": "docker stop listmkr",
+    "create:aws": "chmod +x ./bin/deploy.sh; ./bin/deploy.sh create",
+    "deploy:aws": "chmod +x ./bin/deploy.sh; ./bin/deploy.sh deploy"
   },
   "betterScripts": {
     "compile": {
